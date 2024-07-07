@@ -6,7 +6,7 @@ export const signUpUser = async (req, res, next) => {
         // username, email and password for signup
         const { userName, email, password } = req.body; 
         // post newuser to the database
-        const newUser = await userModel.create({ userName, email, password }); 
+        await userModel.create({ userName, email, password }); 
         // send back a success response
         res.status(201).json({ message: 'User created successfully' }); 
     } catch (error) {
